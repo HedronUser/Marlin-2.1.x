@@ -62,7 +62,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Jesse Jenkins, MOST delta green v0)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Jesse Jenkins, MOST delta green v1)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -403,7 +403,7 @@
  * Enable and connect the power supply to the PS_ON_PIN.
  * Specify whether the power supply is active HIGH or active LOW.
  */
-#define PSU_CONTROL
+//#define PSU_CONTROL
 //#define PSU_NAME "Power Supply"
 
 #if ENABLED(PSU_CONTROL)
@@ -621,7 +621,7 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 275
+#define HEATER_0_MAXTEMP 250
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -923,7 +923,7 @@
   #define DELTA_MAX_RADIUS       115.0     // (mm)
 
   // Center-to-center distance of the holes in the diagonal push rods.
-  #define DELTA_DIAGONAL_ROD 251.0        // (mm)
+  #define DELTA_DIAGONAL_ROD 251.8        // (mm)
 
   // Distance between bed and nozzle Z home position
   #define DELTA_HEIGHT 238.40             // (mm) Get this value from G33 auto calibrate
@@ -931,16 +931,16 @@
   #define DELTA_ENDSTOP_ADJ { 0.55, -0.76, 0.21 } // Get these values from G33 auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 131.87              // (mm) Get this value from G33 auto calibrate, got 131.8 the first time then 131.4 the second
+  #define DELTA_RADIUS 131.5              // (mm) Get this value from G33 auto calibrate, got 131.8 the first time then 131.4 the second
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { 0.0, 0, 0 } // Get these values from G33 auto calibrate
+  #define DELTA_TOWER_ANGLE_TRIM { 0.1, 0.1, 0.38 } // Get these values from G33 auto calibrate
 
   // Delta radius and diagonal rod adjustments (mm)
   //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
-  #define DELTA_DIAGONAL_ROD_TRIM_TOWER { 0.0, -0.4, -0.1 }
+  #define DELTA_DIAGONAL_ROD_TRIM_TOWER { 0, 0, 0 }
 
 #endif
 
@@ -3228,7 +3228,7 @@
 // Use software PWM to drive the fan, as for the heaters. This uses a very low frequency
 // which is not as annoying as with the hardware PWM. On the other hand, if this frequency
 // is too low, you should also increment SOFT_PWM_SCALE.
-//#define FAN_SOFT_PWM
+#define FAN_SOFT_PWM
 
 // Incrementing this by 1 will double the software PWM frequency,
 // affecting heaters, and the fan if FAN_SOFT_PWM is enabled.
