@@ -141,10 +141,10 @@
 #define HEATER_BED_PIN                         3
 
 #ifndef FAN_PIN
-  #define FAN_PIN                              8
+  #define FAN_PIN                              8 //this is part cooling fan
 #endif
 #ifndef FAN1_PIN
-  #define FAN1_PIN                             6
+  #define FAN1_PIN                             6 //this is always on (e3d fan)
 #endif
 #ifndef FAN2_PIN
   #define FAN2_PIN                             2
